@@ -1,4 +1,6 @@
 //Mortgage Calculator
+//FUNCTIONS
+
 /* Steps:
 1. -> annual interest rate, /12, -> monthly interest rate
 
@@ -14,63 +16,51 @@
 
 7. ->6 result & borrowed amount, mult 6 result and borrowed amount, -> monthly payment
 */
-(function () {
-    //CALCULATOR MODEL FOR CALCULATIONS
-    const annualInterest = document.getElementById("interestrateinput").value;
 
-    const monthlyInterest = (annualInterest / 12);
-    
-    const monthlyInterestPlusOne = monthlyInterest + 1;
-    
-    const loanYears = document.getElementById("loanterminput").value;
-    
-    const loanMonths = (loanYears * 12);
-    
-    const monthlyNegativePow = Math.pow(monthlyInterestPlusOne*(loanMonths * (-1)));
-    
-    const monthlyNegPowFromOne = 1 - monthlyNegativePow;
-    
-    const monthlyInterestDiv = monthlyInterest / monthlyNegPowFromOne;
-    
-    const homeValue = document.getElementById("homevalueinput").value;
+//VARIABLE DECLARATIONS
 
-    const downPayment = document.getElementById("downpaymentinput").value;
+const homeValue = document.getElementById("homevalueinput").value;
 
-    const borrowedAmount = homeValue - downPayment;
-    
-    const monthlyPayment = borrowedAmount * monthlyInterestDiv;
-})();
+const downPayment = document.getElementById("downpaymentinput").value;
 
+const interestRate = document.getElementById("interestrateinput").value;
 
+const loanLength = document.getElementById("loanlengthinput").value;
 
-(function () {
-    //CALCULATOR VIEW FOR QUERY SELECTORS
+const loanStart = document.getElementById("loandateinput").value;
 
+const monthlyHoa = document.getElementById("hoainput").value;
 
-})();
+const monthlyInsurance = document.getElementById("insuranceinput").value;
 
+const monthlyPropertyTax = document.getElementById("propertytaxinput").value;
 
+const results = document.getElementById("results");
 
-(function () {
-    //CALCULATOR CONTROLLER TO COMBINE MODEL AND VIEW
+const resultsBtn = document.getElementById("calculatebutton");
+
+const monthlyInterestRate = interestRate / 12;
+
+const monthlyPlusOne = monthlyInterestRate + 1;
+
+const loanLengthInMonths = loanLength * 12;
+
+const negPowInterestRate = Math.pow(monthlyPlusOne, loanLengthInMonths);
+
+const negPowSubtracted = 1 - negPowInterestRate;
+
+const monthlyInterestDivided = monthlyInterestRate / negPowSubtracted;
+
+const mortgageResult = (homeValue - downPayment) * monthlyInterestDivided;
 
 
-
-})();
-
-
-
-
-
-
+//functionoutput
+const mortgageResultOutput = function() {
  
+    results.textContent = mortgageResult;
+}
 
-
-
-
-
-
-
+resultsBtn.addEventListener("onclick", mortgageResultOutput);
 
 
 
