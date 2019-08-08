@@ -40,7 +40,7 @@ html {
   .boxes {
       padding-top: 1.25em;
       border: 0.1rem solid gray;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
   }
 
   h1 {
@@ -63,8 +63,12 @@ html {
       display: flex;
       justify-content: center;
       background: black;
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       color: rgb(0, 150, 250);
+  }
+
+  #formoutput {
+    font-size: 1.4em;
   }
 
   body {
@@ -117,11 +121,19 @@ html {
   border-radius: 5em;
 }
 
+.input {
+  height: 2em;
+}
 
+#loandateinput {
+  width: 10em;
+}
 
-
-
-
+#output {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 

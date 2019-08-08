@@ -19,47 +19,49 @@
             <div id="calculationsform">
                 <div class="boxes">
                     <label for="homevalue">Home Value:</label>
-                    <textarea id="homevalueinput" class="input" placeholder="0"></textarea>
+                    <input type="number" name="homevalueinput" id="homevalueinput" class="input" placeholder="0" value="180000" required>
 
                     <label for="downpayment">Down Payment:</label>
-                    <textarea id="downpaymentinput" class="input" placeholder="0"></textarea>
+                    <input type="number" name="downpaymentinput" id="downpaymentinput" class="input" placeholder="0" value="20000" required>
                 </div>
 
                 <div class="boxes">
                     <label for="interestrate">Interest Rate:</label>
-                    <textarea id="interestrateinput" class="input" placeholder="0%"></textarea>
+                    <input type="number" name="interestrateinput" id="interestrateinput" class="input" placeholder="0" value="5" required>
                 </div>
 
                 <div id="loanlength" class="boxes">
                     <label for="loanterm">Loan Term:</label>
-                    <textarea id="loanterminput" class="input" placeholder="0"></textarea>
+                    <input type="number" name="loanlengthinput" id="loanlengthinput" class="input" placeholder="0" value="30" required>
                 </div>
 
                 <div id="loandatebegin" class="boxes">
                     <label for="loanstart">Date of purchase(MMYY):</label>
-                    <textarea id="loandateinput" class="input" placeholder="MMYY"></textarea>
+                    <input type="month" name="loandateinput" id="loandateinput" class="input" placeholder="2019-08"  value="2019-08" required>
                 </div>
 
                 <div class="boxes">
                     <label for="hoa">Hoa yearly fees:</label>
-                    <textarea id="hoainput" class="input" placeholder="0"></textarea>
+                    <input type="number" name="hoainput" id="hoainput" class="input" placeholder="0" value="1000" required>
                 </div>
 
                 <div class="boxes">
                     <label for="insurance">All Insurances combined:</label>
-                    <textarea id="insuranceinput" class="input" placeholder="0"></textarea>
+                    <input type="number" name="insuranceinput" id="insuranceinput" class="input" placeholder="0" value="1000" required>
                 </div>
 
                 <div class="boxes">
                     <label for="propertytax">Property taxes per year:</label>
-                    <textarea id="propertytaxinput" class="input" placeholder="0"></textarea>
+                    <input type="number" name="propertytaxinput" id="propertytaxinput" class="input" placeholder="0" value="1000" required>
                 </div>
 
                 <div id="calculatebutton" class="boxes">
                     <div class="button">
-                        <button type="submit" onclick="location.href='assessment.html'">Calculate your mortgage payment!</button>
+                        <button type="submit">Calculate your mortgage payment!</button>
                     </div>
 
+                </div>
+                <div id="output" class="boxes">
                 </div>
 
             </div>
@@ -83,7 +85,6 @@
 
 
 
-
+        <script src = "MortCalc.js"></script>
         </body>
-    <script src = "MortCalc.js"></script>
 </html>

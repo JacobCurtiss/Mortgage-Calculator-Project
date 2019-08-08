@@ -19,48 +19,66 @@
 
 //VARIABLE DECLARATIONS
 
-const homeValue = document.getElementById("homevalueinput").value;
+const homeValue = parseInt(document.getElementById("homevalueinput").value);
+console.log(homeValue);
 
-const downPayment = document.getElementById("downpaymentinput").value;
+const downPayment = parseInt(document.getElementById("downpaymentinput").value);
+console.log(downPayment);
 
-const interestRate = document.getElementById("interestrateinput").value;
+const interestRate = parseInt(document.getElementById("interestrateinput").value);
+console.log(interestRate);
 
-const loanLength = document.getElementById("loanlengthinput").value;
+const loanLength = parseInt(document.getElementById("loanlengthinput").value);
+console.log(loanLength);
 
-const loanStart = document.getElementById("loandateinput").value;
+const loanStart = parseInt(document.getElementById("loandateinput").value);
+console.log(loanStart);
 
-const monthlyHoa = document.getElementById("hoainput").value;
+const monthlyHoa = parseInt(document.getElementById("hoainput").value);
+console.log(monthlyHoa);
 
-const monthlyInsurance = document.getElementById("insuranceinput").value;
+const monthlyInsurance = parseInt(document.getElementById("insuranceinput").value);
+console.log(monthlyInsurance);
 
-const monthlyPropertyTax = document.getElementById("propertytaxinput").value;
-
-const results = document.getElementById("results");
+const monthlyPropertyTax = parseInt(document.getElementById("propertytaxinput").value);
+console.log(monthlyPropertyTax);
 
 const resultsBtn = document.getElementById("calculatebutton");
 
-const monthlyInterestRate = interestRate / 12;
+const monthlyInterestRateBeforeRound = (interestRate / 12)
+console.log(monthlyInterestRateBeforeRound);
+
+const monthlyInterestRate = Math.round(100 * monthlyInterestRateBeforeRound) / 100;
+console.log(monthlyInterestRate);
 
 const monthlyPlusOne = monthlyInterestRate + 1;
+console.log(monthlyPlusOne);
 
 const loanLengthInMonths = loanLength * 12;
+console.log(loanLengthInMonths);
 
-const negPowInterestRate = Math.pow(monthlyPlusOne, loanLengthInMonths);
+const negPowInterestRate = Math.pow(monthlyPlusOne, (-1 * loanLengthInMonths));
+console.log(negPowInterestRate);
 
 const negPowSubtracted = 1 - negPowInterestRate;
+console.log(negPowSubtracted);
 
 const monthlyInterestDivided = monthlyInterestRate / negPowSubtracted;
+console.log(monthlyInterestDivided);
 
 const mortgageResult = (homeValue - downPayment) * monthlyInterestDivided;
+console.log(mortgageResult);
 
-
+const output = document.getElementById("output")
 //functionoutput
-const mortgageResultOutput = function() {
- 
-    results.textContent = mortgageResult;
+function mortgage() {
+    
+    output.firstChild.data = `Your monthly mortgage payment is ${mortgageResult}`;
+    
+
 }
 
-resultsBtn.addEventListener("onclick", mortgageResultOutput);
+resultsBtn.addEventListener("click", mortgage);
 
 
 
