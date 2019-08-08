@@ -20,36 +20,30 @@
 //VARIABLE DECLARATIONS
 
 const homeValue = parseInt(document.getElementById("homevalueinput").value);
-console.log(homeValue);
 
 const downPayment = parseInt(document.getElementById("downpaymentinput").value);
-console.log(downPayment);
 
 const interestRate = parseInt(document.getElementById("interestrateinput").value);
-console.log(interestRate);
 
 const loanLength = parseInt(document.getElementById("loanlengthinput").value);
-console.log(loanLength);
 
 const loanStart = parseInt(document.getElementById("loandateinput").value);
-console.log(loanStart);
 
 const monthlyHoa = parseInt(document.getElementById("hoainput").value);
-console.log(monthlyHoa);
 
 const monthlyInsurance = parseInt(document.getElementById("insuranceinput").value);
-console.log(monthlyInsurance);
 
 const monthlyPropertyTax = parseInt(document.getElementById("propertytaxinput").value);
-console.log(monthlyPropertyTax);
 
 const resultsBtn = document.getElementById("calculatebutton");
 
 const monthlyInterestRateBeforeRound = (interestRate / 12)
 console.log(monthlyInterestRateBeforeRound);
 
-const monthlyInterestRate = Math.round(100 * monthlyInterestRateBeforeRound) / 100;
-console.log(monthlyInterestRate);
+const preDecimalMonthlyInterestRate = Math.round(100 * monthlyInterestRateBeforeRound) / 100;
+console.log(preDecimalMonthlyInterestRate);
+
+const monthlyInterestRate = preDecimalMonthlyInterestRate / 100;
 
 const monthlyPlusOne = monthlyInterestRate + 1;
 console.log(monthlyPlusOne);
@@ -73,8 +67,8 @@ const output = document.getElementById("output")
 //functionoutput
 function mortgage() {
     
-    output.firstChild.data = `Your monthly mortgage payment is ${mortgageResult}`;
-    
+    output.firstChild.data = `Your monthly mortgage payment is ${Math.round(mortgageResult)}`;
+
 
 }
 
