@@ -22,21 +22,36 @@ const resultsBtn = document.getElementById("calculatebutton");
 
 function mortgage() {
 
-    const homeValue = parseInt(document.getElementById("homevalueinput").value);
+    let homeValue = document.getElementById("homevalueinput").value;
 
-    const downPayment = parseInt(document.getElementById("downpaymentinput").value);
+    let downPayment = document.getElementById("downpaymentinput").value;
 
-    const interestRate = parseInt(document.getElementById("interestrateinput").value);
+    let interestRate = document.getElementById("interestrateinput").value;
 
-    const loanLength = parseInt(document.getElementById("loanlengthinput").value);
+    const loanLength = document.getElementById("loanlengthinput").value;
 
-    const loanStart = parseInt(document.getElementById("loandateinput").value);
+    const loanStart = document.getElementById("loandateinput").value;
 
-    const monthlyHoa = parseInt(document.getElementById("hoainput").value);
+    const monthlyHoa = document.getElementById("hoainput").value;
 
-    const monthlyInsurance = parseInt(document.getElementById("insuranceinput").value);
+    const monthlyInsurance = document.getElementById("insuranceinput").value;
 
-    const monthlyPropertyTax = parseInt(document.getElementById("propertytaxinput").value);
+    const monthlyPropertyTax = document.getElementById("propertytaxinput").value;
+
+    function replaceAndParseInt(string) {
+        string = string.replace(",", "");
+        parseInt(string);
+    }
+
+    replaceAndParseInt(homeValue);
+    replaceAndParseInt(downPayment);
+    replaceAndParseInt(interestRate);
+    replaceAndParseInt(loanLength);
+    replaceAndParseInt(loanStart);
+    replaceAndParseInt(monthlyHoa);
+    replaceAndParseInt(monthlyInsurance);
+    replaceAndParseInt(monthlyPropertyTax);
+    console.log(homeValue);
 
     const resultsBtn = document.getElementById("calculatebutton");
 
