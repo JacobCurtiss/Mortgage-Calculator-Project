@@ -83,8 +83,11 @@ resultsBtn.addEventListener("click", mortgage);
 
 
 
-
-
+let value = "50,000";
+console.log(value);
+value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+parseInt(value);
+console.log(value);
 
 
 

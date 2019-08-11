@@ -21,7 +21,7 @@ html {
     display: flex; 
     display: inline-block;
     justify-content: center;
-    block-size: 39em;
+    block-size: 35em;
     align-items: center;
     align-content: center;
     background-image: none;
@@ -164,5 +164,7 @@ html {
   }
 }
 
-
+#disclaimer {
+  transform: translate(41%, 0%);
+}
 
