@@ -28,15 +28,15 @@ function mortgage() {
 
     let interestRate = document.getElementById("interestrateinput").value;
 
-    const loanLength = document.getElementById("loanlengthinput").value;
+    let loanLength = document.getElementById("loanlengthinput").value;
 
-    const loanStart = document.getElementById("loandateinput").value;
+    let loanStart = document.getElementById("loandateinput").value;
 
-    const monthlyHoa = document.getElementById("hoainput").value;
+    let monthlyHoa = document.getElementById("hoainput").value;
 
-    const monthlyInsurance = document.getElementById("insuranceinput").value;
+    let monthlyInsurance = document.getElementById("insuranceinput").value;
 
-    const monthlyPropertyTax = document.getElementById("propertytaxinput").value;
+    let monthlyPropertyTax = document.getElementById("propertytaxinput").value;
 
     function replaceAndParseInt(string) {
         string = string.replace(",", "");
