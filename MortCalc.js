@@ -22,36 +22,21 @@ const resultsBtn = document.getElementById("calculatebutton");
 
 function mortgage() {
 
-    let homeValue = document.getElementById("homevalueinput").value;
+    let homeValue = parseInt(document.getElementById("homevalueinput").value.split(",").join(""));
 
-    let downPayment = document.getElementById("downpaymentinput").value;
+    let downPayment = parseInt(document.getElementById("downpaymentinput").value.split(",").join(""));
 
-    let interestRate = document.getElementById("interestrateinput").value;
+    let interestRate = parseInt(document.getElementById("interestrateinput").value.split(",").join(""));
 
-    let loanLength = document.getElementById("loanlengthinput").value;
+    let loanLength = parseInt(document.getElementById("loanlengthinput").value.split(",").join(""));
 
-    let loanStart = document.getElementById("loandateinput").value;
+    let loanStart = parseInt(document.getElementById("loandateinput").value.split(",").join(""));
 
-    let monthlyHoa = document.getElementById("hoainput").value;
+    let yearlyHoa = parseInt(document.getElementById("hoainput").value.split(",").join(""));
 
-    let monthlyInsurance = document.getElementById("insuranceinput").value;
+    let yearlyInsurance = parseInt(document.getElementById("insuranceinput").value.split(",").join(""));
 
-    let monthlyPropertyTax = document.getElementById("propertytaxinput").value;
-
-    function replaceAndParseInt(string) {
-        string = string.replace(",", "");
-        parseInt(string);
-    }
-
-    replaceAndParseInt(homeValue);
-    replaceAndParseInt(downPayment);
-    replaceAndParseInt(interestRate);
-    replaceAndParseInt(loanLength);
-    replaceAndParseInt(loanStart);
-    replaceAndParseInt(monthlyHoa);
-    replaceAndParseInt(monthlyInsurance);
-    replaceAndParseInt(monthlyPropertyTax);
-    console.log(homeValue);
+    let yearlyPropertyTax = parseInt(document.getElementById("propertytaxinput").value.split(",").join(""));
 
     const resultsBtn = document.getElementById("calculatebutton");
 
@@ -71,8 +56,8 @@ function mortgage() {
 
     const monthlyInterestDivided = monthlyInterestRate / negPowSubtracted;
 
-    const mortgageResult = (homeValue - downPayment) * monthlyInterestDivided;
-    console.log(mortgageResult);
+    const mortgageResult = (homeValue - downPayment) * monthlyInterestDivided + (yearlyHoa / 12) + (yearlyInsurance / 12) + (yearlyPropertyTax / 12);
+
     const output = document.getElementById("output")
     if (isNaN(mortgageResult)) {
         return output.firstChild.data = "You have to enter values to receive a mortgage"
@@ -80,14 +65,6 @@ function mortgage() {
 }
 
 resultsBtn.addEventListener("click", mortgage);
-
-
-
-let value = "50,000";
-console.log(value);
-value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-parseInt(value);
-console.log(value);
 
 
 
